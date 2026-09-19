@@ -8,6 +8,14 @@ class CartNotifier extends Notifier<List<Product>> {
   }
 
   void addProduct(Product product) {
+    final alreadyExists = state.any((item) {
+      return item.id == product.id;
+    });
+
+    if (alreadyExists) {
+      return;
+    }
+
     state = [...state, product];
   }
 
@@ -21,3 +29,7 @@ class CartNotifier extends Notifier<List<Product>> {
     state = [];
   }
 }
+
+final cartNotifierProvider = NotifierProvider<CartNotifier, List<Product>>(
+  CartNotifier.new,
+);
