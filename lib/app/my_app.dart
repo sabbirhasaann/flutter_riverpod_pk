@@ -4,6 +4,9 @@ import 'package:flutter_riverpod_pk/LEVEL%203%20-%20Riverpod%20Fundamentals/Less
 import 'package:flutter_riverpod_pk/Level%204%20-%20Mutable%20and%20Synchronous%20Riverpod%20State/Lesson%2032%20-%20Notifier/Cart%20Example/cart_example.dart';
 import 'package:flutter_riverpod_pk/Level%204%20-%20Mutable%20and%20Synchronous%20Riverpod%20State/Lesson%2032%20-%20Notifier/Simple%20Counter/a_simple_counter_example.dart';
 
+import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier Provider/Shopping Cart/cart_summary.dart';
+import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier Provider/Simple Counter/counter_page.dart';
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -39,6 +42,16 @@ class Home extends StatelessWidget {
         "title":
             "Level 4 Mutable and Synchronous Riverpod State - Lesson 32 - Notifier - Cart Example",
         "screen": CartExample(),
+      },
+      {
+        "title":
+            "Level 4 Mutable and Synchronous Riverpod State - Lesson 33 - NotifierProvider - Simple Counter",
+        "screen": CounterPage(),
+      },
+      {
+        "title":
+            "Level 4 Mutable and Synchronous Riverpod State - Lesson 33 - NotifierProvider - Shopping Cart Summary",
+        "screen": CartSummary(),
       },
     ];
 
