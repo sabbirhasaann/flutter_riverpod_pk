@@ -8,6 +8,8 @@ import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier
 import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier Provider/Simple Counter/counter_page.dart';
 import '../Level 5 - Async Riverpod/Lesson 42 - Future Provider/category_product_page/category_product_page.dart';
 import '../Level 5 - Async Riverpod/Lesson 42 - Future Provider/product_page_fp/product_page.dart';
+import '../Level 5 - Async Riverpod/Lesson 43 - Stream Provider/chat_room/chat_page.dart';
+import '../Level 5 - Async Riverpod/Lesson 43 - Stream Provider/simple_dart_stream/counter_stream_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -64,6 +66,16 @@ class Home extends StatelessWidget {
         'title':
             'Level 5 - Async Riverpod (Lesson 42 - FutureProvider) - Category Product Page',
         'screen': CategoryProductPage(),
+      },
+      {
+        'title':
+            'Level 5 - Async Riverpod (Lesson 43 - StreamProvider) - Counter Stream Page',
+        'screen': CounterStreamPage(),
+      },
+      {
+        'title':
+            'Level 5 - Async Riverpod (Lesson 43 - StreamProvider) - Chat Page',
+        'screen': ChatPage(roomId: 101,),
       },
     ];
 
