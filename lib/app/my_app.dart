@@ -3,7 +3,7 @@ import 'package:flutter_riverpod_pk/LEVEL%203%20-%20Riverpod%20Fundamentals/Less
 import 'package:flutter_riverpod_pk/LEVEL%203%20-%20Riverpod%20Fundamentals/Lesson%2028%20-%20Provider%20Lifecycle/auto_dispose_example.dart';
 import 'package:flutter_riverpod_pk/Level%204%20-%20Mutable%20and%20Synchronous%20Riverpod%20State/Lesson%2032%20-%20Notifier/Cart%20Example/cart_example.dart';
 import 'package:flutter_riverpod_pk/Level%204%20-%20Mutable%20and%20Synchronous%20Riverpod%20State/Lesson%2032%20-%20Notifier/Simple%20Counter/a_simple_counter_example.dart';
-import 'package:flutter_riverpod_pk/features/auth2/presentation/widgets/auth_gate.dart';
+import 'package:flutter_riverpod_pk/features/auth/presentation/widgets/auth_gate.dart';
 
 import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier Provider/Shopping Cart/cart_summary.dart';
 import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier Provider/Simple Counter/counter_page.dart';
