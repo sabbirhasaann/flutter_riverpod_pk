@@ -35,7 +35,7 @@ final filteredProductsProvider = Provider<List<Product>>((ref) {
   final searchQuery = ref.watch(searchQueryProvider);
 
   return products.where((product) {
-    final matchesCategory = category == null || product.category == category;
+    final matchesCategory = product.category == category;
     final matchesSearch = product.name.toLowerCase().contains(
       searchQuery.toLowerCase(),
     );
