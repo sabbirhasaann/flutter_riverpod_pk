@@ -3,6 +3,7 @@ import 'package:flutter_riverpod_pk/LEVEL%203%20-%20Riverpod%20Fundamentals/Less
 import 'package:flutter_riverpod_pk/LEVEL%203%20-%20Riverpod%20Fundamentals/Lesson%2028%20-%20Provider%20Lifecycle/auto_dispose_example.dart';
 import 'package:flutter_riverpod_pk/Level%204%20-%20Mutable%20and%20Synchronous%20Riverpod%20State/Lesson%2032%20-%20Notifier/Cart%20Example/cart_example.dart';
 import 'package:flutter_riverpod_pk/Level%204%20-%20Mutable%20and%20Synchronous%20Riverpod%20State/Lesson%2032%20-%20Notifier/Simple%20Counter/a_simple_counter_example.dart';
+import 'package:flutter_riverpod_pk/features/auth2/presentation/widgets/auth_gate.dart';
 
 import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier Provider/Shopping Cart/cart_summary.dart';
 import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier Provider/Simple Counter/counter_page.dart';
@@ -10,6 +11,11 @@ import '../Level 5 - Async Riverpod/Lesson 42 - Future Provider/category_product
 import '../Level 5 - Async Riverpod/Lesson 42 - Future Provider/product_page_fp/product_page.dart';
 import '../Level 5 - Async Riverpod/Lesson 43 - Stream Provider/chat_room/chat_page.dart';
 import '../Level 5 - Async Riverpod/Lesson 43 - Stream Provider/simple_dart_stream/counter_stream_page.dart';
+import '../Level 5 - Async Riverpod/Lesson 44 - AsyncNotifier/async_notifier_product_page.dart';
+import '../Level 5 - Async Riverpod/Lesson 49 - Pagination and Infinite Scrolling/cursor_pagination/cursor_pagination_screen.dart';
+import '../Level 5 - Async Riverpod/Lesson 49 - Pagination and Infinite Scrolling/generation_based_pagination/generation_pagination_screen.dart';
+import '../Level 5 - Async Riverpod/Lesson 49 - Pagination and Infinite Scrolling/offset_pagination/offset_pagination_screen.dart';
+import '../level_6_riverpod_repository_architecture/lesson_56_crud_architecture/crud_architecture_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,8 +24,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Riverpod',
-      home: Home(),
+      home: AuthGate(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        fontFamily: 'Lato',
+      ),
     );
   }
 }
@@ -75,7 +85,35 @@ class Home extends StatelessWidget {
       {
         'title':
             'Level 5 - Async Riverpod (Lesson 43 - StreamProvider) - Chat Page',
-        'screen': ChatPage(roomId: 101,),
+        'screen': ChatPage(
+          roomId: 101,
+        ),
+      },
+      {
+        'title':
+            'Level 5 - Async Riverpod (Lesson 44 - Async Notiifer) - Async Notifier Product Page',
+        'screen': AsyncNotifierProductPage(),
+      },
+      {
+        'title':
+            'Level 5 - Async Riverpod (Lesson 49 - Pagination and Infinte Scrolling) - ProductPagination',
+        'screen': OffsetPaginationScreen(),
+      },
+      {
+        'title':
+            'Level 5 - Async Riverpod (Lesson 49 - Pagination and Infinte Scrolling) - CursorPaginationScreen',
+        'screen': CursorPaginationScreen(),
+      },
+      {
+        'title':
+            'Level 5 - Async Riverpod (Lesson 49 - Pagination and Infinte Scrolling) - GenerationPaginationScreen',
+        'screen': GenerationPaginationScreen(),
+      },
+
+      {
+        'title':
+            'Level 6 - Repository - Provider Architecture (Lesson 56 - CRUD Architecture)',
+        'screen': CrudArchitecturePage(),
       },
     ];
 
