@@ -1,7 +1,7 @@
+import 'package:flutter_riverpod_pk/features/auth/data/models/auth_response_model.dart';
 import '../../domain/repositories/auth_repository.dart';
 import '../../domain/entities/user.dart';
 import '../datasources/auth_remote_data_source.dart';
-import '../models/user_model.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;
@@ -20,8 +20,8 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       final data = await remoteDataSource.login(email, password);
       if (data != null) {
-        final user = UserModel.fromJson(data);
-        return user;
+        final authResponse = AuthResponseModel.fromJson(data);
+        return authResponse.user;
       }
     } catch (e) {
       print(e);

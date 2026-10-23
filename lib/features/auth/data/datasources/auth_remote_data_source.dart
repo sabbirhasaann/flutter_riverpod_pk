@@ -17,21 +17,14 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   Future<Map<String, dynamic>?> login(String email, String password) async {
     try {
       final response = await client.post(
-        ApiEndpoints.login,
+        ApiEndpoints.loginV2,
         data: {
           'email': email,
           'password': password,
         },
       );
 
-      final response1 = await client.get(
-        ApiEndpoints.me,
-        headers: {
-          'authorization': 'Bearer ${response.data['access']}',
-        },
-      );
-
-      return response1.data;
+      return response.data;
     } catch (e) {
       print("e... $e");
     }
