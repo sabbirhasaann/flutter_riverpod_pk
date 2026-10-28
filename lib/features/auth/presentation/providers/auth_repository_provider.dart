@@ -11,6 +11,7 @@ final authRepositoryProvider = Provider<AuthRepository>((ref) {
   return AuthRepositoryImpl(
     remoteDataSource: AuthRemoteDataSourceImpl(
       client: client,
+      tokenStorage: tokenStorage,
     ),
     tokenStorage: tokenStorage,
   );
