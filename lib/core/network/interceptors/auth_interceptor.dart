@@ -14,7 +14,12 @@ class AuthInterceptor extends Interceptor {
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) async {
-    // final requiresAuth = options.extra[requiresAuthKey] as bool? ?? true;
+    final requiresAuth = options.extra[requiresAuthKey] as bool? ?? true;
+
+    if (!requiresAuth) {
+      handler.next(options);
+      return;
+    }
 
     final accessToken = await tokenStorage.getAccessToken();
     if (accessToken == null || accessToken.isEmpty) {
@@ -22,7 +27,6 @@ class AuthInterceptor extends Interceptor {
       return;
     }
 
-    print("auth interceptor called");
     options.headers['Authorization'] = 'Bearer $accessToken';
     handler.next(options);
   }
