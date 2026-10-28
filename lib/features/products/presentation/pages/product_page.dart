@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod_pk/features/auth/presentation/providers/auth_notifier_provider.dart';
 import 'package:flutter_riverpod_pk/features/products/presentation/providers/product_notifier_provider.dart';
 
 class ProductPage extends ConsumerWidget {
@@ -24,6 +25,14 @@ class ProductPage extends ConsumerWidget {
               ref.read(productNotifierProvider.notifier).getProducts();
             },
             tooltip: 'Refresh',
+          ),
+          IconButton(
+            onPressed: () {
+              ref.read(authNotifierProvider.notifier).logout();
+            },
+            icon: Icon(
+              Icons.logout,
+            ),
           ),
         ],
       ),
