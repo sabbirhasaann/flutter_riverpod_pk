@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod_pk/features/products/presentation/pages/product_page.dart';
 import '../providers/auth_notifier_provider.dart';
 import '../providers/auth_state.dart';
 import '../pages/splash_page.dart';
@@ -101,7 +102,6 @@ class _AuthGateState extends ConsumerState<AuthGate> {
     //   },
     // );
 
-
     // / Listen for global session-restoration errors
     // ref.listen<AuthState>(
     //   authNotifierProvider,
@@ -109,7 +109,7 @@ class _AuthGateState extends ConsumerState<AuthGate> {
     //     if (next.status == AuthStatus.unAuthenticated &&
     //         next.errorMessage != null &&
     //         next.errorMessage != previous?.errorMessage) {
-          
+
     //       ScaffoldMessenger.of(context)
     //         ..hideCurrentSnackBar()
     //         ..showSnackBar(
@@ -130,7 +130,8 @@ class _AuthGateState extends ConsumerState<AuthGate> {
       case AuthStatus.unAuthenticated:
         return LoginPage();
       case AuthStatus.authenticated:
-        return HomePage();
+        // return HomePage();
+        return ProductPage();
     }
   }
 }

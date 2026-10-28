@@ -1,4 +1,5 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:flutter_riverpod_pk/features/auth/domain/entities/auth_tokens.dart';
 
 class SecureTokenStorage {
   static const _accessTokenKey = 'access_token';
@@ -10,17 +11,16 @@ class SecureTokenStorage {
     : _storage = storage;
 
   Future<void> saveTokens({
-    required String accessToken,
-    required String refreshToken,
+    required AuthTokens tokens,
   }) async {
     await _storage.write(
       key: _accessTokenKey,
-      value: accessToken,
+      value: tokens.accessToken,
     );
 
     await _storage.write(
       key: _refreshTokenKey,
-      value: refreshToken,
+      value: tokens.refreshToken,
     );
   }
 
