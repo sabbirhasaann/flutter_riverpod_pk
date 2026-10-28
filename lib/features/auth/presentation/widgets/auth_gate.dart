@@ -5,7 +5,8 @@ import '../providers/auth_notifier_provider.dart';
 import '../providers/auth_state.dart';
 import '../pages/splash_page.dart';
 import '../pages/login_page.dart';
-import '../pages/home_page.dart';
+
+// import '../pages/home_page.dart';
 
 class AuthGate extends ConsumerStatefulWidget {
   const AuthGate({super.key});
