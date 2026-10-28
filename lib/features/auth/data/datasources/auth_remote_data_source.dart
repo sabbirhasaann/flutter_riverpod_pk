@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod_pk/core/network/api_client.dart';
 import 'package:flutter_riverpod_pk/core/network/api_endpoints.dart';
+import 'package:flutter_riverpod_pk/core/storage/secure_token_storage.dart';
 
 abstract class AuthRemoteDataSource {
   Future<Map<String, dynamic>?> login(String email, String password);
@@ -8,9 +9,11 @@ abstract class AuthRemoteDataSource {
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final ApiClient client;
+  final SecureTokenStorage tokenStorage;
 
   AuthRemoteDataSourceImpl({
     required this.client,
+    required this.tokenStorage,
   });
 
   @override
@@ -22,6 +25,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           'email': email,
           'password': password,
         },
+        requiresAuth: false,
       );
 
       return response.data;
@@ -32,5 +36,11 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<void> logout() async {}
+  Future<void> logout() async {
+    try {
+      await tokenStorage.clear();
+    } catch (e) {
+      print("Logout exception");
+    }
+  }
 }
