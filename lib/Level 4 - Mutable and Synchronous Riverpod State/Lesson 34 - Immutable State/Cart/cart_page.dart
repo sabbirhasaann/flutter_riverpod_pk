@@ -23,6 +23,14 @@ class CartPage extends ConsumerWidget {
             title: Text(
               item.name,
             ),
+            trailing: IconButton(
+              icon: Icon(
+                Icons.delete,
+              ),
+              onPressed: () {
+                ref.read(cartNotifierProvider.notifier).removeProduct(item.id);
+              },
+            ),
           );
         },
       ),

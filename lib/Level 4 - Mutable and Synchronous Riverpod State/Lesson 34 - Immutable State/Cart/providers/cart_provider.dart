@@ -17,6 +17,15 @@ class CartNotifier extends Notifier<CartState> {
       coupon: state.coupon,
     );
   }
+
+  void removeProduct(int id) {
+    state = CartState(
+      items: state.items.where((product) {
+        return product.id != id;
+      }).toList(),
+      coupon: state.coupon,
+    );
+  }
 }
 
 final cartNotifierProvider = NotifierProvider<CartNotifier, CartState>(
