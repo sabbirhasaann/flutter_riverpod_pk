@@ -7,6 +7,7 @@ import 'package:flutter_riverpod_pk/Level%204%20-%20Mutable%20and%20Synchronous%
 
 import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier Provider/Shopping Cart/cart_summary.dart';
 import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier Provider/Simple Counter/counter_page.dart';
+import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 34 - Immutable State/Cart/cart_immutable_state_page.dart';
 import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 34 - Immutable State/Todo/todo_page.dart';
 import '../Level 5 - Async Riverpod/Lesson 42 - Future Provider/category_product_page/category_product_page.dart';
 import '../Level 5 - Async Riverpod/Lesson 42 - Future Provider/product_page_fp/product_page.dart';
@@ -74,6 +75,11 @@ class Home extends StatelessWidget {
         'title':
             'Level 4 - Mutalbe and Synchronous Riverpod State - Lesson 34 Immutable State - Todo Page',
         'screen': TodoPage(),
+      },
+      {
+        'title':
+            'Level 4 - Mutalbe and Synchronous Riverpod State - Lesson 34 Immutable State - Cart Immutable State Page',
+        'screen': CartImmutableStatePage(),
       },
 
       {
