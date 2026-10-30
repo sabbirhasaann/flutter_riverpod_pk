@@ -1,11 +1,5 @@
-enum Category {
-  all,
-}
-
-enum SortOption {
-  all,
-  relevance,
-}
+import './category_enum.dart';
+import './sort_option_enum.dart';
 
 class ProductFilter {
   final Category category;

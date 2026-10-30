@@ -9,6 +9,7 @@ import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier
 import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 33 - Notifier Provider/Simple Counter/counter_page.dart';
 import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 34 - Immutable State/Cart/cart_immutable_state_page.dart';
 import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 34 - Immutable State/Todo/todo_page.dart';
+import '../Level 4 - Mutable and Synchronous Riverpod State/Lesson 35 - State Model/Product Filter/product_filter_page.dart';
 import '../Level 5 - Async Riverpod/Lesson 42 - Future Provider/category_product_page/category_product_page.dart';
 import '../Level 5 - Async Riverpod/Lesson 42 - Future Provider/product_page_fp/product_page.dart';
 import '../Level 5 - Async Riverpod/Lesson 43 - Stream Provider/chat_room/chat_page.dart';
@@ -80,6 +81,11 @@ class Home extends StatelessWidget {
         'title':
             'Level 4 - Mutalbe and Synchronous Riverpod State - Lesson 34 Immutable State - Cart Immutable State Page',
         'screen': CartImmutableStatePage(),
+      },
+      {
+        'title':
+            'Level 4 - Mutalbe and Synchronous Riverpod State - Lesson 35 State Model - Product Filter Page',
+        'screen': ProductFilterPage(),
       },
 
       {
