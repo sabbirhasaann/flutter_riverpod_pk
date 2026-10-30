@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'providers/filtered_products_provider.dart';
 import './models/product.dart';
 import 'widgets/product_filter_appbar.dart';
+import './product_detail_page.dart';
 
 class ProductFilterPage extends ConsumerWidget {
   const ProductFilterPage({super.key});
@@ -41,7 +42,17 @@ class _ProductCardItem extends StatelessWidget {
         ),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return ProductDetailPage(
+                    productId: product.id,
+                  );
+                },
+              ),
+            );
+          },
           child: Padding(
             padding: const EdgeInsets.all(12.0),
             child: Row(
